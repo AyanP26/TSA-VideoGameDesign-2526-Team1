@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyex2en4hxqyc"]
+
+[ext_resource type="Texture2D" path="res://arrow-sprite.png" id="1_gngw1"]
+[ext_resource type="Script" uid="uid://bdhm77s2h7ktj" path="res://right_button.gd" id="1_sf3eu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf3eu"]
+size = Vector2(100, 86)
+
+[node name="Right Button" type="Area2D"]
+script = ExtResource("1_sf3eu")
+
+[node name="Right Button" type="TextureRect" parent="."]
+offset_left = 59.0
+offset_top = 461.0
+offset_right = 571.0
+offset_bottom = 973.0
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("1_gngw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(109, 511)
+shape = SubResource("RectangleShape2D_sf3eu")

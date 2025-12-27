@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://8blvdehnuhri"]
+
+[ext_resource type="Texture2D" path="res://right-arrow-hud.png" id="1_tul40"]
+[ext_resource type="FontFile" uid="uid://dounow57h586d" path="res://Fonts/Jersey10-Regular.ttf" id="2_auceq"]
+
+[node name="Level_HUD" type="CanvasLayer"]
+
+[node name="Right Arrow" type="TextureRect" parent="." groups=["Arrow HUD"]]
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_tul40")
+
+[node name="Left Arrow" type="TextureRect" parent="." groups=["Arrow HUD"]]
+offset_left = 213.0
+offset_top = 100.0
+offset_right = 313.0
+offset_bottom = 200.0
+rotation = 3.1415927
+texture = ExtResource("1_tul40")
+
+[node name="Up Arrow" type="TextureRect" parent="." groups=["Arrow HUD"]]
+offset_left = 220.0
+offset_top = 102.0
+offset_right = 320.0
+offset_bottom = 202.0
+rotation = -1.5707964
+texture = ExtResource("1_tul40")
+
+[node name="Down Arrow" type="TextureRect" parent="." groups=["Arrow HUD"]]
+offset_left = 411.0
+offset_top = 3.0
+offset_right = 511.0
+offset_bottom = 103.0
+rotation = 1.5707964
+texture = ExtResource("1_tul40")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -337.0
+offset_bottom = 105.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_auceq")
+theme_override_font_sizes/font_size = 115
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://8blvdehnuhri"]
+
+[node name="Level_HUD" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -942.0
+offset_top = 4.0
+offset_right = -259.0
+offset_bottom = 161.0
+grow_horizontal = 0
+scale = Vector2(0.82022613, 0.72787434)
+theme_override_font_sizes/font_size = 115
+text = "MAIN MENU
+
+START
+SETTINGS
+ . . ."
+horizontal_alignment = 1
+vertical_alignment = 1

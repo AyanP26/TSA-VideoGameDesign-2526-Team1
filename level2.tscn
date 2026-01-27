@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://mf3h0d4m04vs"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 349.99997
+offset_top = 5.0
+offset_right = 408.99997
+offset_bottom = 28.0
+scale = Vector2(5.7865615, 10.665354)
+text = "LEVEL 2"

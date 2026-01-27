@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlq5lm6iqosj1"]
+
+[ext_resource type="Script" uid="uid://b4cgdptev6r3q" path="res://opponent.gd" id="1_amo4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvhhs"]
+
+[node name="Opponent" type="Area2D"]
+scale = Vector2(14.033195, 30.85808)
+script = ExtResource("1_amo4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38.12389, 10.467275)
+shape = SubResource("RectangleShape2D_tvhhs")

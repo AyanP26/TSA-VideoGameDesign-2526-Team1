@@ -6,7 +6,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	_basic_attack()
 	
 func _basic_attack():
 	if Input.is_action_pressed("basic_attack"): 
@@ -16,7 +16,6 @@ func _basic_attack():
 		# if that signal returns true:
 		# play a connecting animation
 		
-
 
 func _on_hit_enemy() -> void:
 	pass # Replace with function body.

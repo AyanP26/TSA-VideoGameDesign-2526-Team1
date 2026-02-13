@@ -1,9 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlq5lm6iqosj1"]
+[gd_scene load_steps=8 format=3 uid="uid://dlq5lm6iqosj1"]
 
 [ext_resource type="Script" uid="uid://b4cgdptev6r3q" path="res://opponent.gd" id="1_amo4f"]
 [ext_resource type="Script" uid="uid://bmuy261adfs24" path="res://opponent_health.gd" id="2_lltpv"]
+[ext_resource type="Texture2D" uid="uid://c2slmdt7h24bv" path="res://sprites/IMG_9678.png" id="3_pawit"]
+[ext_resource type="Texture2D" uid="uid://sslsmcs5rt86" path="res://sprites/IMG_9679.png" id="4_qk7nl"]
+[ext_resource type="Texture2D" uid="uid://b8cq355e6kays" path="res://sprites/IMG_9680.png" id="5_nsxeh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvhhs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lltpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pawit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qk7nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nsxeh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Opponent" type="Area2D"]
 scale = Vector2(14.033195, 30.85808)
@@ -14,9 +34,16 @@ position = Vector2(38.12389, 10.467275)
 shape = SubResource("RectangleShape2D_tvhhs")
 
 [node name="opponent_health_label" type="Label" parent="CollisionShape2D"]
-offset_left = -13.824361
-offset_top = -10.272837
-offset_right = 52.17564
-offset_bottom = 38.727165
+offset_left = -44.394733
+offset_top = -16.008772
+offset_right = 21.605267
+offset_bottom = 32.991226
 text = "100"
 script = ExtResource("2_lltpv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(-17.886162, -1.1990381)
+scale = Vector2(0.034027334, 0.016731927)
+sprite_frames = SubResource("SpriteFrames_lltpv")
+frame_progress = 0.14900912
+flip_h = true

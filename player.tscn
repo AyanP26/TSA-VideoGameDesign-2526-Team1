@@ -1,10 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck8kihxbu5br3"]
+[gd_scene load_steps=7 format=3 uid="uid://ck8kihxbu5br3"]
 
 [ext_resource type="Script" uid="uid://brkb14rml8grc" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://cu4o7oeyw7ske" path="res://player_character.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://jx75g1hu7mp7" path="res://IMG_9568.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://h5sj5e60oehs" path="res://IMG_9569.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://btmhgf00r7all" path="res://IMG_9570.png" id="4_2hs0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(29.742262, 42.61234)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_hqtel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sweqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2hs0m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_4flbx")
@@ -14,7 +33,9 @@ position = Vector2(291, 397)
 scale = Vector2(-6.6738615, -10.330111)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(296, 391)
-scale = Vector2(0.3173176, 0.3082277)
-texture = ExtResource("2_onrkg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(500, 378.99997)
+scale = Vector2(0.36950004, 0.34699997)
+sprite_frames = SubResource("SpriteFrames_1jxqw")
+frame_progress = 0.6399182
+flip_h = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8blvdehnuhri"]
 
 [ext_resource type="Script" uid="uid://bhv3hl8ugcvre" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://c43fhmmq7jxhb" path="res://sprites/startbutton.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://dxda5pdv27yyn" path="res://startbutton.png" id="2_fu7sn"]
 
 [node name="Level_HUD" type="CanvasLayer"]
 script = ExtResource("1_7vrkn")
@@ -10,7 +10,7 @@ script = ExtResource("1_7vrkn")
 offset_left = 428.0
 offset_top = 398.0
 offset_right = 736.0
-offset_bottom = 481.0
-icon = ExtResource("2_7vrkn")
+offset_bottom = 528.0
+icon = ExtResource("2_fu7sn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

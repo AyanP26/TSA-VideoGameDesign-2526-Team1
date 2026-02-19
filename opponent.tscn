@@ -34,16 +34,17 @@ position = Vector2(38.12389, 10.467275)
 shape = SubResource("RectangleShape2D_tvhhs")
 
 [node name="opponent_health_label" type="Label" parent="CollisionShape2D"]
-offset_left = -44.394733
-offset_top = -16.008772
-offset_right = 21.605267
-offset_bottom = 32.991226
+offset_left = 11.75784
+offset_top = -10.726525
+offset_right = 39.75784
+offset_bottom = 12.273475
+scale = Vector2(1.1000541, 0.3240728)
 text = "100"
 script = ExtResource("2_lltpv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-17.886162, -1.1990381)
-scale = Vector2(0.034027334, 0.016731927)
+position = Vector2(-20.095205, -1.5231018)
+scale = Vector2(0.039728146, 0.016731927)
 sprite_frames = SubResource("SpriteFrames_lltpv")
-frame_progress = 0.14900912
+frame_progress = 0.26279598
 flip_h = true

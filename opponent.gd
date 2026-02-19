@@ -13,13 +13,17 @@ func _process(delta: float) -> void:
 	hit_process()
 
 func hit_process():
-	if Input.is_action_pressed("basic_attack"):
-		#if self.status == "vulnerable":
-		health -= vulnerability_coefficient * 10
-		$CollisionShape2D/opponent_health_label.text = str(health)
-		print(health)
-	
-		
-		# decrease the health-bar shape
+	if health > 0:
+		if Input.is_action_just_pressed("basic_attack"):
+			#if self.status == "vulnerable":
+			health -= vulnerability_coefficient * 5
+			$CollisionShape2D/opponent_health_label.text = str(health)
+			print(health)
+		elif Input.is_action_just_pressed("ice_attack"):
+			health -= vulnerability_coefficient * 15
+			$CollisionShape2D/opponent_health_label.text = str(health)
+			print(health) 
+	else:	
+		get_tree().change_scene_to_file('level2.tscn')# decrease the health-bar shape
 	
 	

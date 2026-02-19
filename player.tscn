@@ -26,16 +26,19 @@ animations = [{
 }]
 
 [node name="Area2D" type="Area2D"]
+z_index = 1
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(291, 397)
 scale = Vector2(-6.6738615, -10.330111)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(500, 378.99997)
 scale = Vector2(0.36950004, 0.34699997)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-frame_progress = 0.6399182
+frame_progress = 0.9185318
 flip_h = true

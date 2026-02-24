@@ -16,3 +16,5 @@ texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("3_v38iq")
+
+[node name="Timer" type="Timer" parent="."]

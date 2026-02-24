@@ -11,11 +11,14 @@ stream = ExtResource("2_xcfcc")
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 167.00005
-offset_top = 54.00003
-offset_right = 228.00005
-offset_bottom = 129.00003
-scale = Vector2(13.409603, 14.858301)
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 610.0
+offset_bottom = 398.0
+scale = Vector2(0.49991605, 0.5044502)
+theme_override_font_sizes/font_size = 90
 text = "LEVEL 3
 
 "
+
+[node name="Timer" type="Timer" parent="."]

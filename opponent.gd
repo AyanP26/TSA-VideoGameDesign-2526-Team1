@@ -1,9 +1,10 @@
 extends Area2D
 
 # Called when the node enters the scene tree for the first time.
-var health = 100
+var score = 0
 var vulnerability_coefficient = 1
 var vulnerability = true
+var song_is_playing = true
 func _ready() -> void:
 	var current_scene = get_tree().current_scene.name
 	if current_scene == "Level2":
@@ -18,20 +19,20 @@ func _process(delta: float) -> void:
 	hit_process()
 
 func hit_process():
-	if health > 0:
+	if song_is_playing == true:
 		if Input.is_action_just_pressed("basic_attack"):
 			#if self.status == "vulnerable":
-			health -= vulnerability_coefficient * 5
-			$CollisionShape2D/opponent_health_label.text = str(health)
-			print(health)
+			score += vulnerability_coefficient * 5
+			$CollisionShape2D/opponent_score_label.text = str(score)
+			
 		elif Input.is_action_just_pressed("ice_attack"):
-			health -= vulnerability_coefficient * 15
-			$CollisionShape2D/opponent_health_label.text = str(health)
-			print(health)
+			score += vulnerability_coefficient * 15
+			$CollisionShape2D/opponent_score_label.text = str(score)
+			
 		elif Input.is_action_just_pressed("fireball"):
-			health -= vulnerability_coefficient * 20
-			$CollisionShape2D/opponent_health_label.text = str(health)
-			print(health)
+			score += vulnerability_coefficient * 20
+			$CollisionShape2D/opponent_score_label.text = str(score)
+			
 	else:
 		var current_scene = get_tree().current_scene.name
 		if current_scene == "Level1":

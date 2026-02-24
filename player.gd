@@ -18,7 +18,11 @@ func _basic_attack():
 
 func _ice_attack():
 	if Input.is_action_just_pressed("ice_attack"):
-		print("Ice Attack")		
+		print("Ice Attack")
+
+func _fire_attack():
+	if Input.is_action_just_pressed("fireball"):
+		print("Fire Attack")		
 
 func _on_hit_enemy() -> void:
 	pass # Replace with function body.

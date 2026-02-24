@@ -1,19 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmd1ykpqj36re"]
 
 [ext_resource type="Script" uid="uid://blpsxaa04ssku" path="res://level_1.gd" id="1_dopym"]
-[ext_resource type="Texture2D" uid="uid://cwa02m3n2q7e6" path="res://sprites/NeonSunset.png" id="1_jwv3a"]
-[ext_resource type="AudioStream" uid="uid://nmcl3a6wdfag" path="res://level_1_music.ogg" id="3_ootpb"]
+[ext_resource type="AudioStream" uid="uid://bqfd1fpo3yqqv" path="res://tutorial.ogg" id="3_ootpb"]
+[ext_resource type="Texture2D" uid="uid://b0jxixi0p62md" path="res://sprites/level1.png" id="3_v38iq"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_dopym")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -7.0
-offset_top = -5.0
-offset_right = 1146.0
-offset_bottom = 644.0
-texture = ExtResource("1_jwv3a")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ootpb")
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_v38iq")

@@ -1,15 +1,87 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlq5lm6iqosj1"]
+[gd_scene load_steps=22 format=3 uid="uid://dlq5lm6iqosj1"]
 
 [ext_resource type="Script" uid="uid://b4cgdptev6r3q" path="res://opponent.gd" id="1_amo4f"]
 [ext_resource type="Script" uid="uid://bmuy261adfs24" path="res://opponent_health.gd" id="2_lltpv"]
+[ext_resource type="Texture2D" uid="uid://bl2138o8hgthg" path="res://sprites/IMG_9803.png" id="3_bguui"]
 [ext_resource type="Texture2D" uid="uid://c2slmdt7h24bv" path="res://sprites/IMG_9678.png" id="3_pawit"]
+[ext_resource type="Texture2D" uid="uid://opbixuhdgpk4" path="res://sprites/IMG_9804.png" id="4_bu1qt"]
 [ext_resource type="Texture2D" uid="uid://sslsmcs5rt86" path="res://sprites/IMG_9679.png" id="4_qk7nl"]
+[ext_resource type="Texture2D" uid="uid://bycdgbcarkfi4" path="res://sprites/IMG_9805.png" id="5_gnu6t"]
 [ext_resource type="Texture2D" uid="uid://b8cq355e6kays" path="res://sprites/IMG_9680.png" id="5_nsxeh"]
+[ext_resource type="Texture2D" uid="uid://btnjxqe08m6hs" path="res://sprites/IMG_9807.png" id="6_cocri"]
+[ext_resource type="Texture2D" uid="uid://g5t1tknvxdhr" path="res://sprites/IMG_9809.png" id="7_ifc41"]
+[ext_resource type="Texture2D" uid="uid://ybvr055hliq0" path="res://sprites/IMG_9810.png" id="8_icndx"]
+[ext_resource type="Texture2D" uid="uid://dvekt0btmyxe0" path="res://sprites/IMG_9815.png" id="9_swiur"]
+[ext_resource type="Texture2D" uid="uid://csqy0bh6unt0t" path="res://sprites/IMG_9818.png" id="10_mjjwu"]
+[ext_resource type="Texture2D" uid="uid://ba2gp3eyjx4dc" path="res://sprites/IMG_9850.png" id="11_yi71x"]
+[ext_resource type="Texture2D" uid="uid://dmdowd3f226oa" path="res://sprites/IMG_9851.png" id="12_ti0h3"]
+[ext_resource type="Texture2D" uid="uid://dwupb05cnguik" path="res://sprites/IMG_9852.png" id="13_udnwn"]
+[ext_resource type="Texture2D" uid="uid://bv6ej322u0bvi" path="res://sprites/IMG_9888.png" id="14_cocri"]
+[ext_resource type="Texture2D" uid="uid://bev5ldg4avb8j" path="res://sprites/IMG_9889.png" id="15_ifc41"]
+[ext_resource type="Texture2D" uid="uid://b4a1w2inq1e6o" path="res://sprites/IMG_9890.png" id="16_icndx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvhhs"]
+size = Vector2(28.812513, 25.55508)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lltpv"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bguui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cocri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bu1qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ifc41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gnu6t")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_icndx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_swiur")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_mjjwu")
+}],
+"loop": true,
+"name": &"level1animation",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_yi71x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ti0h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_udnwn")
+}],
+"loop": true,
+"name": &"level2animation",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cocri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ifc41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_icndx")
+}],
+"loop": true,
+"name": &"level3animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_pawit")
@@ -21,7 +93,7 @@ animations = [{
 "texture": ExtResource("5_nsxeh")
 }],
 "loop": true,
-"name": &"default",
+"name": &"level4animation",
 "speed": 5.0
 }]
 
@@ -30,21 +102,28 @@ scale = Vector2(14.033195, 30.85808)
 script = ExtResource("1_amo4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(38.12389, 10.467275)
+position = Vector2(67.34624, 13.518184)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_tvhhs")
 
 [node name="opponent_health_label" type="Label" parent="CollisionShape2D"]
-offset_left = 11.75784
-offset_top = -10.726525
-offset_right = 39.75784
-offset_bottom = 12.273475
+offset_left = -18.81253
+offset_top = -28.906528
+offset_right = 9.187473
+offset_bottom = -5.9065285
 scale = Vector2(1.1000541, 0.3240728)
 text = "100"
 script = ExtResource("2_lltpv")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-20.095205, -1.5231018)
-scale = Vector2(0.039728146, 0.016731927)
+texture_filter = 1
+position = Vector2(-24.81015, -1.1760416)
+scale = Vector2(0.042521395, 0.020122416)
 sprite_frames = SubResource("SpriteFrames_lltpv")
-frame_progress = 0.26279598
+animation = &"level1animation"
+autoplay = "level1animation"
+frame_progress = 0.40071312
 flip_h = true
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

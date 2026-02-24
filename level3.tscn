@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://7urgck3d7lh7"]
+[gd_scene load_steps=3 format=3 uid="uid://7urgck3d7lh7"]
+
+[ext_resource type="Script" uid="uid://cluvcrbnu0dhu" path="res://level_3.gd" id="1_lyoih"]
+[ext_resource type="AudioStream" uid="uid://d2jkwva8nncxd" path="res://pop_LK66dkIc.ogg" id="2_o2ccw"]
 
 [node name="Level3" type="Node2D"]
+script = ExtResource("1_lyoih")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 310.0
@@ -8,4 +12,8 @@ offset_top = 33.0
 offset_right = 369.0
 offset_bottom = 56.0
 scale = Vector2(7.6430564, 12.567877)
-text = "LEVEL 3"
+text = "LEVEL 2"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_o2ccw")
+autoplay = true

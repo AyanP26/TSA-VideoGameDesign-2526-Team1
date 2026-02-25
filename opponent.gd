@@ -2,9 +2,11 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 var score = 0
-var vulnerability_coefficient = 1
+var accuracy_coefficient = 1
 var vulnerability = true
 var song_is_playing = true
+func _find_difference_keypress_and_song():
+	return accuracy_coefficient
 func _ready() -> void:
 	var current_scene = get_tree().current_scene.name
 	if current_scene == "Level2":
@@ -22,15 +24,22 @@ func hit_process():
 	if song_is_playing == true:
 		if Input.is_action_just_pressed("basic_attack"):
 			#if self.status == "vulnerable":
-			score += vulnerability_coefficient * 5
+			score += int(accuracy_coefficient * 5)
+			$CollisionShape2D/opponent_score_label.text = str(score)
+		
+		elif Input.is_action_just_pressed("block"):
+			if accuracy_coefficient != 0 and accuracy_coefficient !=1:
+				score -= 2*int(1/(accuracy_coefficient))
+			elif accuracy_coefficient == 1:
+				pass
 			$CollisionShape2D/opponent_score_label.text = str(score)
 			
 		elif Input.is_action_just_pressed("ice_attack"):
-			score += vulnerability_coefficient * 15
+			score += int(accuracy_coefficient * 15)
 			$CollisionShape2D/opponent_score_label.text = str(score)
 			
 		elif Input.is_action_just_pressed("fireball"):
-			score += vulnerability_coefficient * 20
+			score += int(accuracy_coefficient * 20)
 			$CollisionShape2D/opponent_score_label.text = str(score)
 			
 	else:

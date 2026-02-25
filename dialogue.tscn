@@ -1,0 +1,167 @@
+[gd_scene load_steps=6 format=3 uid="uid://n1gmmkuxj4ns"]
+
+[ext_resource type="Texture2D" uid="uid://df243wh1u0kxx" path="res://sprites/IMG_9905.png" id="1_hoxo3"]
+[ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="1_kp46k"]
+
+[sub_resource type="Animation" id="Animation_hoxo3"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_758ep"]
+resource_name = "dialogue"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q2h7b"]
+_data = {
+&"RESET": SubResource("Animation_hoxo3"),
+&"dialogue": SubResource("Animation_758ep")
+}
+
+[node name="dialogue" type="Node2D"]
+z_index = 2
+
+[node name="dialogue1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="dialogue1"]
+layout_mode = 0
+offset_left = -53.000004
+offset_top = -549.0
+offset_right = 1947.0
+offset_bottom = 951.0
+scale = Vector2(0.6150295, 0.8316943)
+texture = ExtResource("1_hoxo3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dialogue1"]
+libraries = {
+&"": SubResource("AnimationLibrary_q2h7b")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogue1"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 340.0
+offset_right = 1096.0
+offset_bottom = 620.0
+theme_override_fonts/normal_font = ExtResource("1_kp46k")
+theme_override_font_sizes/normal_font_size = 55
+text = "Yo, Boom-Bot, I need your help!
+You’ve been training me on my moves the past few weeks, but now I gotta go out there and BATTLE!"
+visible_characters = 0
+visible_ratio = 0.006622517
+
+[node name="Label" type="Label" parent="dialogue1"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 233.0
+offset_right = 375.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_kp46k")
+theme_override_font_sizes/font_size = 60
+text = "MC
+"
+
+[node name="dialogue2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="dialogue2"]
+layout_mode = 0
+offset_left = -53.000004
+offset_top = -549.0
+offset_right = 1947.0
+offset_bottom = 951.0
+scale = Vector2(0.6150295, 0.8316943)
+texture = ExtResource("1_hoxo3")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dialogue2"]
+libraries = {
+&"": SubResource("AnimationLibrary_q2h7b")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogue2"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 340.0
+offset_right = 1096.0
+offset_bottom = 620.0
+theme_override_fonts/normal_font = ExtResource("1_kp46k")
+theme_override_font_sizes/normal_font_size = 60
+text = "Woah, MC, what’s the rush? Someone challenge ya to a beef or sumthin’?"
+visible_characters = 0
+visible_ratio = 0.006622517
+
+[node name="Label" type="Label" parent="dialogue2"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 233.0
+offset_right = 1149.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_kp46k")
+theme_override_font_sizes/font_size = 60
+text = "BoomBot"

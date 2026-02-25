@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck8kihxbu5br3"]
+[gd_scene load_steps=10 format=3 uid="uid://ck8kihxbu5br3"]
 
 [ext_resource type="Script" uid="uid://brkb14rml8grc" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bnotcttkdli45" path="res://sprites/IMG_9568.png" id="2_2hs0m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5ym521lvtw4g" path="res://sprites/IMG_9570.png" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://2wmoskkomhdc" path="res://sprites/IMG_9734.png" id="5_b26j0"]
 [ext_resource type="Texture2D" uid="uid://caq7i8eju0mxi" path="res://sprites/IMG_9735.png" id="6_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://b1kntbw8t730j" path="res://sprites/IMG_9899.png" id="7_1jxqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(29.742262, 42.61234)
@@ -41,6 +42,14 @@ animations = [{
 "loop": true,
 "name": &"kicking",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1jxqw")
+}],
+"loop": true,
+"name": &"miss",
+"speed": 5.0
 }]
 
 [node name="Area2D" type="Area2D"]
@@ -59,6 +68,5 @@ texture_filter = 1
 position = Vector2(500, 378.99997)
 scale = Vector2(0.36950004, 0.34699997)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"dance"
 autoplay = "default"
 flip_h = true

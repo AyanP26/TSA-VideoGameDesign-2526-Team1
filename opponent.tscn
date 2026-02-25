@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlq5lm6iqosj1"]
+[gd_scene load_steps=28 format=3 uid="uid://dlq5lm6iqosj1"]
 
 [ext_resource type="Script" uid="uid://b4cgdptev6r3q" path="res://opponent.gd" id="1_amo4f"]
 [ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="2_ifc41"]
@@ -17,8 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://dmdowd3f226oa" path="res://sprites/IMG_9851.png" id="12_ti0h3"]
 [ext_resource type="Texture2D" uid="uid://dwupb05cnguik" path="res://sprites/IMG_9852.png" id="13_udnwn"]
 [ext_resource type="Texture2D" uid="uid://bv6ej322u0bvi" path="res://sprites/IMG_9888.png" id="14_cocri"]
+[ext_resource type="Texture2D" uid="uid://lnqxkw5ftw1g" path="res://sprites/IMG_9867.png" id="14_mjjwu"]
 [ext_resource type="Texture2D" uid="uid://bev5ldg4avb8j" path="res://sprites/IMG_9889.png" id="15_ifc41"]
+[ext_resource type="Texture2D" uid="uid://dpqd8ve2uwpui" path="res://sprites/IMG_9868.png" id="15_yi71x"]
 [ext_resource type="Texture2D" uid="uid://b4a1w2inq1e6o" path="res://sprites/IMG_9890.png" id="16_icndx"]
+[ext_resource type="Texture2D" uid="uid://bradgog88g1jk" path="res://sprites/IMG_9798.png" id="19_ti0h3"]
+[ext_resource type="Texture2D" uid="uid://66gu284atl52" path="res://sprites/IMG_9799.png" id="20_udnwn"]
+[ext_resource type="Texture2D" uid="uid://4csrqhi8s674" path="res://sprites/IMG_9893.png" id="24_ti0h3"]
+[ext_resource type="Texture2D" uid="uid://drt6vk55yx45w" path="res://sprites/IMG_9894.png" id="25_udnwn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvhhs"]
 size = Vector2(28.812513, 25.55508)
@@ -70,17 +76,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_cocri")
+"texture": ExtResource("14_mjjwu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_ifc41")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_icndx")
+"texture": ExtResource("15_yi71x")
 }],
 "loop": true,
-"name": &"level3animation",
-"speed": 5.0
+"name": &"level2animation_attack",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -93,8 +96,44 @@ animations = [{
 "texture": ExtResource("5_nsxeh")
 }],
 "loop": true,
+"name": &"level3animation",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ti0h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_udnwn")
+}],
+"loop": true,
+"name": &"level3animation_attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cocri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ifc41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_icndx")
+}],
+"loop": true,
 "name": &"level4animation",
-"speed": 5.0
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_ti0h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_udnwn")
+}],
+"loop": true,
+"name": &"level4animation_attack",
+"speed": 2.0
 }]
 
 [node name="Opponent" type="Area2D"]
@@ -122,9 +161,9 @@ texture_filter = 1
 position = Vector2(-24.81015, -1.1760416)
 scale = Vector2(0.042521395, 0.020122416)
 sprite_frames = SubResource("SpriteFrames_lltpv")
-animation = &"level1animation"
+animation = &"level4animation_attack"
 autoplay = "level1animation"
-frame_progress = 0.40071312
+frame_progress = 0.74426895
 flip_h = true
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

@@ -7,22 +7,30 @@ var timing_array = [02.335, "attack",02.983, "block",03.447, "attack",04.164, "a
 ,24.566, "attack",25.799, "block",26.993,"attack",28.167, "block",29.328, "block",
 30.596, "block",31.149, "attack"]
 
+@onready var startTime = Time.get_unix_time_from_system()
+@onready var dialogue = preload("res://dialogue.tscn")
+@onready var music = $AudioStreamPlayer2D
 # Called when the node enters the scene tree for the first time.
+func _get_time() -> float:
+	var time  = Time.get_unix_time_from_system() - startTime
+	return time
+
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+	
 func _ready():
 	var player = preload("res://player.tscn")
 	add_child(player.instantiate())
-	
 	var opponent = preload("res://opponent.tscn")
 	add_child(opponent.instantiate())
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	add_child(dialogue.instantiate())
+	$dialogue/dialogue1/AnimationPlayer.play()
+	wait(6)
+	$dialogue/dialogue2.visible = true
+	$dialogue/dialogue2/AnimationPlayer.play()
+	wait(6)
+	music.play()
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("skip"):
 		get_tree().change_scene_to_file('level2.tscn')
-
 		
-func _song_play() -> void:
-	#wait after dialogue ends and start music
-	pass

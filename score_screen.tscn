@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://fb8d5kqfbdn0"]
+
+[ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="1_7byvd"]
+
+[node name="score_screen" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("1_7byvd")
+theme_override_font_sizes/font_size = 80
+text = " SCORE...................
+ RANK.....................
+"
+vertical_alignment = 1
+
+[node name="score_rank_label" type="Label" parent="."]
+offset_left = 605.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 200

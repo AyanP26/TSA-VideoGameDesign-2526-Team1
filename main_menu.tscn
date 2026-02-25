@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bhv3hl8ugcvre" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://c43fhmmq7jxhb" path="res://sprites/startbutton.png" id="2_7vrkn"]
-[ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://gvh2hky37a6" path="res://sprites/IMG_9957.png" id="2_fu7sn"]
 
 [node name="Level_HUD" type="CanvasLayer"]
 script = ExtResource("1_7vrkn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2000.0
+offset_bottom = 1500.0
+scale = Vector2(0.57599413, 0.43200675)
+texture = ExtResource("2_fu7sn")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 428.0
@@ -13,17 +19,5 @@ offset_top = 430.0
 offset_right = 736.0
 offset_bottom = 513.0
 icon = ExtResource("2_7vrkn")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 350.0
-offset_top = 30.0
-offset_right = 835.0
-offset_bottom = 378.0
-theme_override_fonts/font = ExtResource("3_fu7sn")
-theme_override_font_sizes/font_size = 120
-text = "GET WITH
-the
-RYTHM"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://fb8d5kqfbdn0"]
+[gd_scene load_steps=3 format=3 uid="uid://fb8d5kqfbdn0"]
 
 [ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="1_7byvd"]
+[ext_resource type="Script" uid="uid://dv8boj84bxjah" path="res://score_screen.gd" id="1_juxjb"]
 
 [node name="score_screen" type="Node2D"]
+script = ExtResource("1_juxjb")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 1152.0

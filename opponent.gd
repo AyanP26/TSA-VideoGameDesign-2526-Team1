@@ -17,7 +17,7 @@ func _ready() -> void:
 		$CollisionShape2D/AnimatedSprite2D.animation = "level4animation"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	hit_process()
 
 func hit_process():

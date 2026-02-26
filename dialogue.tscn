@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://n1gmmkuxj4ns"]
+[gd_scene load_steps=7 format=3 uid="uid://n1gmmkuxj4ns"]
 
+[ext_resource type="Script" uid="uid://dbh0rq8u6p423" path="res://dialogue.gd" id="1_758ep"]
 [ext_resource type="Texture2D" uid="uid://df243wh1u0kxx" path="res://sprites/IMG_9905.png" id="1_hoxo3"]
 [ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="1_kp46k"]
 
@@ -78,6 +79,7 @@ _data = {
 
 [node name="dialogue" type="Node2D"]
 z_index = 2
+script = ExtResource("1_758ep")
 
 [node name="dialogue1" type="Control" parent="."]
 layout_mode = 3
@@ -94,7 +96,7 @@ offset_bottom = 951.0
 scale = Vector2(0.6150295, 0.8316943)
 texture = ExtResource("1_hoxo3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="dialogue1"]
+[node name="animplayer1" type="AnimationPlayer" parent="dialogue1"]
 libraries = {
 &"": SubResource("AnimationLibrary_q2h7b")
 }
@@ -124,6 +126,7 @@ text = "MC
 "
 
 [node name="dialogue2" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -131,24 +134,24 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="dialogue2"]
 layout_mode = 0
-offset_left = -53.000004
-offset_top = -549.0
-offset_right = 1947.0
-offset_bottom = 951.0
+offset_left = -24.000004
+offset_top = -550.0
+offset_right = 1976.0
+offset_bottom = 950.0
 scale = Vector2(0.6150295, 0.8316943)
 texture = ExtResource("1_hoxo3")
 flip_h = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="dialogue2"]
+[node name="animplayer2" type="AnimationPlayer" parent="dialogue2"]
 libraries = {
 &"": SubResource("AnimationLibrary_q2h7b")
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="dialogue2"]
 layout_mode = 0
-offset_left = 26.0
+offset_left = 61.0
 offset_top = 340.0
-offset_right = 1096.0
+offset_right = 1131.0
 offset_bottom = 620.0
 theme_override_fonts/normal_font = ExtResource("1_kp46k")
 theme_override_font_sizes/normal_font_size = 60
@@ -158,10 +161,15 @@ visible_ratio = 0.006622517
 
 [node name="Label" type="Label" parent="dialogue2"]
 layout_mode = 0
-offset_left = 832.0
+offset_left = 874.0
 offset_top = 233.0
-offset_right = 1149.0
+offset_right = 1191.0
 offset_bottom = 350.0
 theme_override_fonts/font = ExtResource("1_kp46k")
 theme_override_font_sizes/font_size = 60
 text = "BoomBot"
+
+[connection signal="animation_finished" from="dialogue1/animplayer1" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="dialogue1/animplayer1" to="." method="_on_animplayer_1_animation_finished"]
+[connection signal="animation_finished" from="dialogue1/animplayer1" to="dialogue1/animplayer1" method="_on_animation_finished"]
+[connection signal="tree_entered" from="dialogue1/animplayer1" to="." method="_on_animplayer_1_tree_entered"]

@@ -19,7 +19,7 @@ func _ready():
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("skip"):
 		get_tree().change_scene_to_file('level3.tscn')
 func _song_play() -> void:

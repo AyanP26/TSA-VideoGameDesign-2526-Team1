@@ -41,7 +41,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kicking",
-"speed": 4.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,

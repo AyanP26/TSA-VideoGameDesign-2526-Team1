@@ -161,9 +161,8 @@ texture_filter = 1
 position = Vector2(-24.81015, -1.1760416)
 scale = Vector2(0.042521395, 0.020122416)
 sprite_frames = SubResource("SpriteFrames_lltpv")
-animation = &"level4animation_attack"
+animation = &"level1animation"
 autoplay = "level1animation"
-frame_progress = 0.74426895
 flip_h = true
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

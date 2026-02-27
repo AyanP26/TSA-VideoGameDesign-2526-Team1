@@ -1,7 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://dlq5lm6iqosj1"]
+[gd_scene load_steps=27 format=3 uid="uid://dlq5lm6iqosj1"]
 
 [ext_resource type="Script" uid="uid://b4cgdptev6r3q" path="res://opponent.gd" id="1_amo4f"]
-[ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="2_ifc41"]
 [ext_resource type="Texture2D" uid="uid://bl2138o8hgthg" path="res://sprites/IMG_9803.png" id="3_bguui"]
 [ext_resource type="Texture2D" uid="uid://c2slmdt7h24bv" path="res://sprites/IMG_9678.png" id="3_pawit"]
 [ext_resource type="Texture2D" uid="uid://opbixuhdgpk4" path="res://sprites/IMG_9804.png" id="4_bu1qt"]
@@ -144,17 +143,6 @@ script = ExtResource("1_amo4f")
 position = Vector2(67.34624, 13.518184)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_tvhhs")
-
-[node name="opponent_score_label" type="Label" parent="CollisionShape2D"]
-offset_left = -134.69247
-offset_top = -25.156796
-offset_right = 1383.9027
-offset_bottom = 164.8432
-scale = Vector2(0.108114496, 0.037257567)
-theme_override_fonts/font = ExtResource("2_ifc41")
-theme_override_font_sizes/font_size = 200
-text = "0"
-horizontal_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 texture_filter = 1

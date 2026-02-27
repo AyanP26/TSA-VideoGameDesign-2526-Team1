@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck8kihxbu5br3"]
+[gd_scene load_steps=11 format=3 uid="uid://ck8kihxbu5br3"]
 
 [ext_resource type="Script" uid="uid://brkb14rml8grc" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bnotcttkdli45" path="res://sprites/IMG_9568.png" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bn2v4yituxovh" path="res://sprites/IMG_9992.png" id="2_dw050"]
 [ext_resource type="Texture2D" uid="uid://baoivmgf8hsyw" path="res://sprites/IMG_9569.png" id="3_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://5ym521lvtw4g" path="res://sprites/IMG_9570.png" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://2wmoskkomhdc" path="res://sprites/IMG_9734.png" id="5_b26j0"]
@@ -13,6 +14,14 @@ size = Vector2(29.742262, 42.61234)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dw050")
+}],
+"loop": false,
+"name": &"block",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_n7ghd")
@@ -68,7 +77,7 @@ texture_filter = 1
 position = Vector2(500, 400)
 scale = Vector2(0.36950004, 0.34699997)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"kicking"
+animation = &"block"
 autoplay = "default"
 flip_h = true
 

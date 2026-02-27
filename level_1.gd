@@ -7,6 +7,7 @@ var timing_array = [2.335, "attack",2.983, "block",3.447, "attack",4.164, "attac
 ,24.566, "attack",25.799, "block",26.993,"attack",28.167, "block",29.328, "block",
 30.596, "block",31.149, "attack"]
 
+var score = 0
 @onready var startTime = Time.get_unix_time_from_system()
 @onready var dialogue = preload("res://dialogue.tscn")
 @onready var music = $AudioStreamPlayer2D
@@ -21,10 +22,13 @@ func make_time_array():
 	for element in time_only_array:
 		if element is String:
 			time_only_array.remove_at(time_only_array.find(element))
+	#print(time_only_array)
 	for element2 in time_only_array:
-		element2 += 12 - 0.25
+		time_only_array[time_only_array.find(element2)] += 12 - 0.25
+	#print(time_only_array)
 	return time_only_array
-	
+
+
 
 func _ready():
 	make_time_array()
@@ -39,9 +43,10 @@ func _process(_delta: float) -> void:
 	for element in time_only_array:
 		if _get_time() >= element:
 			if timing_array[timing_array.find(element)+1] == "attack":
-				$AnimationPlayer.play("greencirc")
+				$input_circles/AnimationPlayer.play("greencirc")
 			if timing_array[timing_array.find(element)+1] == "block":
-				$AnimationPlayer.play("purplecirc")
+				$input_circles/AnimationPlayer.play("purplecirc")
+			time_only_array.remove_at(time_only_array.find(element))
 
 func process_beat_logic(time, input):
 	var actual_time = time - 12
@@ -60,6 +65,8 @@ func process_beat_logic(time, input):
 				third_array.append(second_array[second_array.find(index2)-1])
 	if len(third_array) > 0:
 		accuracy_coefficient = 1 - 3*abs(actual_time-third_array[0])
+		timing_array.remove_at(timing_array.find(third_array[0]))
+		timing_array.remove_at(timing_array.find(third_array[0]+1))
 	else:
 		accuracy_coefficient = -1
 	
@@ -74,8 +81,11 @@ func _input(event: InputEvent) -> void:
 	var accuracy = -.5
 	if event.is_action_pressed("basic_attack"):
 		$crowd_reacts.visible=true
+		score += 50 * accuracy
 		accuracy = process_beat_logic(_get_time(),"attack")
 	elif event.is_action_pressed("block"):
+		$crowd_reacts.visible=true
+		score += 50 * accuracy
 		accuracy = process_beat_logic(_get_time(),"block")
 	elif event.is_action_pressed("skip"):
 		get_tree().change_scene_to_file('level2.tscn')
@@ -94,3 +104,7 @@ func _input(event: InputEvent) -> void:
 		$crowd_reacts.play("fire")
 	elif accuracy >= .9:
 		$crowd_reacts.play("rad")
+	
+	$score_label.text = str(score)
+	
+	

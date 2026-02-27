@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://duy57xto7010h"]
+[gd_scene load_steps=23 format=3 uid="uid://duy57xto7010h"]
 
 [ext_resource type="Script" uid="uid://woat7glrbkae" path="res://level_4.gd" id="1_na6m6"]
 [ext_resource type="AudioStream" uid="uid://cr8lmj0jntp1j" path="res://level_3_music.ogg" id="2_xcfcc"]
+[ext_resource type="Texture2D" uid="uid://d1oev1l6udsd8" path="res://sprites/IMG_0005.png" id="3_n01hv"]
 [ext_resource type="Texture2D" uid="uid://bhtvd3018naoc" path="res://sprites/basic_circle.png" id="3_p2trt"]
 [ext_resource type="Texture2D" uid="uid://blmulq7gqujl8" path="res://sprites/cover_circle.png" id="4_n01hv"]
 [ext_resource type="Texture2D" uid="uid://cw0vpqsv52vkf" path="res://sprites/fire_circle.png" id="5_7odde"]
@@ -66,6 +67,9 @@ tracks/3/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_1idop"]
+resource_name = "bluecirc"
+
 [sub_resource type="Animation" id="Animation_i2041"]
 resource_name = "greencirc"
 length = 0.5
@@ -94,6 +98,9 @@ tracks/1/keys = {
 "values": [Vector2(2, 2), Vector2(0.01, 0.01)]
 }
 
+[sub_resource type="Animation" id="Animation_beq0j"]
+resource_name = "purplecirc"
+
 [sub_resource type="Animation" id="Animation_rjtee"]
 resource_name = "redcirc"
 length = 0.5
@@ -121,12 +128,6 @@ tracks/1/keys = {
 "update": 0,
 "values": []
 }
-
-[sub_resource type="Animation" id="Animation_1idop"]
-resource_name = "bluecirc"
-
-[sub_resource type="Animation" id="Animation_beq0j"]
-resource_name = "purplecirc"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xy4tn"]
 _data = {
@@ -223,6 +224,12 @@ script = ExtResource("1_na6m6")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_xcfcc")
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5760219, 0.43201768)
+texture = ExtResource("3_n01hv")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 281.0

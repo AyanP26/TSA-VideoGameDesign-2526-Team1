@@ -9,7 +9,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("basic_attack"):
 		$AnimatedSprite2D.play("kicking")
 	elif event.is_action_pressed("block"):
-		$AnimatedSprite2D.play("kicking")
+		$AnimatedSprite2D.play("block")
 	elif event.is_action_pressed("ice_attack"):
 		$AnimatedSprite2D.play("kicking")
 	elif event.is_action_pressed("fireball"):
@@ -19,5 +19,6 @@ func _process(_delta: float) -> void:
 	pass
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if $AnimatedSprite2D.animation == "kicking":
+	if ($AnimatedSprite2D.animation == "kicking" or
+	$AnimatedSprite2D.animation == "block"):
 		$AnimatedSprite2D.play("default")

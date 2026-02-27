@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(500, 378.99997)
+position = Vector2(500, 400)
 scale = Vector2(0.36950004, 0.34699997)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
 animation = &"kicking"

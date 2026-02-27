@@ -1,6 +1,6 @@
 extends Node2D
-var timing_array = [02.350, "attack",03.563, "block",04.840, "attack",
-07.197, "block",09.560, "block",11.784, "attack",14.532, "block",16.729, "attack",
+var timing_array = [2.350, "attack",3.563, "block",4.840, "attack",
+7.197, "block",9.560, "block",11.784, "attack",14.532, "block",16.729, "attack",
 19.137, "attack",21.441, "attack",23.962, "attack",25.370,
 26.079, "block",26.643, "attack",27.225, "attack",27.803,
 28.839, "attack",30.161, "block",30.907, "attack",

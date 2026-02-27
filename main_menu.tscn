@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8blvdehnuhri"]
+[gd_scene load_steps=5 format=3 uid="uid://8blvdehnuhri"]
 
 [ext_resource type="Script" uid="uid://bhv3hl8ugcvre" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://c43fhmmq7jxhb" path="res://sprites/startbutton.png" id="2_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://gvh2hky37a6" path="res://sprites/IMG_9957.png" id="2_fu7sn"]
+[ext_resource type="AudioStream" uid="uid://ekyumi3sls3l" path="res://title music.ogg" id="4_jix8l"]
 
 [node name="Level_HUD" type="CanvasLayer"]
 script = ExtResource("1_7vrkn")
@@ -19,5 +20,10 @@ offset_top = 430.0
 offset_right = 736.0
 offset_bottom = 513.0
 icon = ExtResource("2_7vrkn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jix8l")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

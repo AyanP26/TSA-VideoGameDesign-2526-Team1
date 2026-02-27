@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ekyumi3sls3l"
+path="res://.godot/imported/title music.ogg-b9d170de2cd2ef8b1ef8c3dcd7edf104.oggvorbisstr"
+
+[deps]
+
+source_file="res://title music.ogg"
+dest_files=["res://.godot/imported/title music.ogg-b9d170de2cd2ef8b1ef8c3dcd7edf104.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

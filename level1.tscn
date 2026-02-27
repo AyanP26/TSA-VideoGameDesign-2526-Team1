@@ -6,17 +6,65 @@
 [ext_resource type="AudioStream" uid="uid://3rq7jg3vwy2w" path="res://bgm.ogg" id="4_usj0q"]
 [ext_resource type="Texture2D" uid="uid://bhtvd3018naoc" path="res://sprites/basic_circle.png" id="4_v38iq"]
 [ext_resource type="Texture2D" uid="uid://blmulq7gqujl8" path="res://sprites/cover_circle.png" id="4_xy4tn"]
-[ext_resource type="Texture2D" uid="uid://cw0vpqsv52vkf" path="res://sprites/fire_circle.png" id="5_i2041"]
-[ext_resource type="Texture2D" uid="uid://bdscy61aps64f" path="res://sprites/ice_circle.png" id="6_xy4tn"]
 [ext_resource type="Texture2D" uid="uid://c17ehwfjomcvn" path="res://sprites/block_circle.png" id="7_usj0q"]
 [ext_resource type="Texture2D" uid="uid://4mnsu03uhuvd" path="res://sprites/IMG_9759.png" id="10_rjtee"]
 [ext_resource type="Texture2D" uid="uid://odbxe5whjmql" path="res://sprites/IMG_9762.png" id="11_1idop"]
-[ext_resource type="Texture2D" path="res://sprites/blank frame.jpg" id="11_beq0j"]
 [ext_resource type="Texture2D" uid="uid://riwhqb5hatln" path="res://sprites/IMG_9765.png" id="12_beq0j"]
 [ext_resource type="Texture2D" uid="uid://8bcljsrl2l1r" path="res://sprites/IMG_9760.png" id="13_nauge"]
 [ext_resource type="Texture2D" uid="uid://b5bjqsxss2ynb" path="res://sprites/IMG_9763.png" id="14_ycv2e"]
 [ext_resource type="Texture2D" uid="uid://cjm1ys7sux47w" path="res://sprites/IMG_9764.png" id="15_c5gc3"]
 [ext_resource type="Texture2D" uid="uid://c6f4k064fhtd8" path="res://sprites/IMG_9761.png" id="16_6e4cv"]
+
+[sub_resource type="Animation" id="Animation_xy4tn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("green/black:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("green/black:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("red/black:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("red/black:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_i2041"]
 resource_name = "greencirc"
@@ -46,37 +94,47 @@ tracks/1/keys = {
 "values": [Vector2(2, 2), Vector2(0.01, 0.01)]
 }
 
-[sub_resource type="Animation" id="Animation_xy4tn"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_rjtee"]
+resource_name = "redcirc"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("green/black:scale")
+tracks/0/path = NodePath("red/black:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.01, 0.01)]
+"values": [Vector2(2, 2), Vector2(0.01, 0.01)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("green/black:position")
+tracks/1/path = NodePath("red/black:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": []
 }
+
+[sub_resource type="Animation" id="Animation_1idop"]
+resource_name = "bluecirc"
+
+[sub_resource type="Animation" id="Animation_beq0j"]
+resource_name = "purplecirc"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xy4tn"]
 _data = {
 &"RESET": SubResource("Animation_xy4tn"),
-&"greencirc": SubResource("Animation_i2041")
+&"bluecirc": SubResource("Animation_1idop"),
+&"greencirc": SubResource("Animation_i2041"),
+&"purplecirc": SubResource("Animation_beq0j"),
+&"redcirc": SubResource("Animation_rjtee")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uuy0h"]
@@ -86,7 +144,7 @@ animations = [{
 "texture": ExtResource("10_rjtee")
 }, {
 "duration": 0.01,
-"texture": ExtResource("11_beq0j")
+"texture": null
 }],
 "loop": false,
 "name": &"cool",
@@ -97,7 +155,7 @@ animations = [{
 "texture": ExtResource("11_1idop")
 }, {
 "duration": 0.01,
-"texture": ExtResource("11_beq0j")
+"texture": null
 }],
 "loop": false,
 "name": &"dissed",
@@ -108,7 +166,7 @@ animations = [{
 "texture": ExtResource("12_beq0j")
 }, {
 "duration": 0.01,
-"texture": ExtResource("11_beq0j")
+"texture": null
 }],
 "loop": false,
 "name": &"eh",
@@ -119,7 +177,7 @@ animations = [{
 "texture": ExtResource("13_nauge")
 }, {
 "duration": 0.01,
-"texture": ExtResource("11_beq0j")
+"texture": null
 }],
 "loop": false,
 "name": &"fire",
@@ -130,7 +188,7 @@ animations = [{
 "texture": ExtResource("14_ycv2e")
 }, {
 "duration": 0.01,
-"texture": ExtResource("11_beq0j")
+"texture": null
 }],
 "loop": false,
 "name": &"fly",
@@ -141,7 +199,7 @@ animations = [{
 "texture": ExtResource("15_c5gc3")
 }, {
 "duration": 0.01,
-"texture": ExtResource("11_beq0j")
+"texture": null
 }],
 "loop": false,
 "name": &"nice",
@@ -152,7 +210,7 @@ animations = [{
 "texture": ExtResource("16_6e4cv")
 }, {
 "duration": 0.01,
-"texture": ExtResource("11_beq0j")
+"texture": null
 }],
 "loop": false,
 "name": &"rad",
@@ -197,8 +255,8 @@ libraries = {
 
 [node name="green" type="TextureRect" parent="input_circles"]
 layout_mode = 0
-offset_left = 270.99997
-offset_right = 1231.0
+offset_left = 291.0
+offset_right = 1251.0
 offset_bottom = 720.0
 scale = Vector2(0.268, 0.3)
 texture = ExtResource("4_v38iq")
@@ -206,34 +264,25 @@ metadata/_edit_use_anchors_ = true
 
 [node name="black" type="TextureRect" parent="input_circles/green"]
 layout_mode = 0
-offset_right = 960.00256
+offset_right = 960.0143
 offset_bottom = 720.0
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("4_xy4tn")
 
-[node name="red" type="TextureRect" parent="input_circles"]
-layout_mode = 0
-offset_left = 631.0
-offset_right = 1591.0
-offset_bottom = 720.0
-scale = Vector2(0.268, 0.3)
-texture = ExtResource("5_i2041")
-
-[node name="blue" type="TextureRect" parent="input_circles"]
-layout_mode = 0
-offset_left = 511.0
-offset_right = 1471.0
-offset_bottom = 720.0
-scale = Vector2(0.268, 0.3)
-texture = ExtResource("6_xy4tn")
-
 [node name="purple" type="TextureRect" parent="input_circles"]
 layout_mode = 0
-offset_left = 391.0
-offset_right = 1351.0
+offset_left = 397.99997
+offset_right = 1358.0
 offset_bottom = 720.0
 scale = Vector2(0.268, 0.3)
 texture = ExtResource("7_usj0q")
+
+[node name="black" type="TextureRect" parent="input_circles/purple"]
+layout_mode = 0
+offset_right = 960.00256
+offset_bottom = 720.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("4_xy4tn")
 
 [node name="crowd_reacts" type="AnimatedSprite2D" parent="."]
 visible = false

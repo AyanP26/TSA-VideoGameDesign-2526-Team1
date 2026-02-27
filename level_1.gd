@@ -10,21 +10,24 @@ var timing_array = [2.335, "attack",2.983, "block",3.447, "attack",4.164, "attac
 @onready var startTime = Time.get_unix_time_from_system()
 @onready var dialogue = preload("res://dialogue.tscn")
 @onready var music = $AudioStreamPlayer2D
+var time_only_array = []
 # Called when the node enters the scene tree for the first time.
 func _get_time():
 	var time  = Time.get_unix_time_from_system() - startTime
 	return time
 	
-func _animate_visual_inputs():
-	var time_only_array = timing_array.duplicate()
+func make_time_array():
+	time_only_array = timing_array.duplicate()
 	for element in time_only_array:
 		if element is String:
 			time_only_array.remove_at(time_only_array.find(element))
-	
+	for element2 in time_only_array:
+		element2 += 12 - 0.25
 	return time_only_array
 	
+
 func _ready():
-	_animate_visual_inputs()
+	make_time_array()
 	var player = preload("res://player.tscn")
 	add_child(player.instantiate())
 	var opponent = preload("res://opponent.tscn")
@@ -33,7 +36,12 @@ func _ready():
 	$dialogue/dialogue1/animplayer1.play("RESET")
 	
 func _process(_delta: float) -> void:
-	pass
+	for element in time_only_array:
+		if _get_time() >= element:
+			if timing_array[timing_array.find(element)+1] == "attack":
+				$AnimationPlayer.play("greencirc")
+			if timing_array[timing_array.find(element)+1] == "block":
+				$AnimationPlayer.play("purplecirc")
 
 func process_beat_logic(time, input):
 	var actual_time = time - 12

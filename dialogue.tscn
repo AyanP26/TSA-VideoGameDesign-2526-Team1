@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://n1gmmkuxj4ns"]
+[gd_scene load_steps=9 format=3 uid="uid://n1gmmkuxj4ns"]
 
 [ext_resource type="Script" uid="uid://dbh0rq8u6p423" path="res://dialogue.gd" id="1_758ep"]
 [ext_resource type="Texture2D" uid="uid://df243wh1u0kxx" path="res://sprites/IMG_9905.png" id="1_hoxo3"]
 [ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="1_kp46k"]
+[ext_resource type="Texture2D" uid="uid://chjn142xm6mt1" path="res://sprites/IMG_9922.png" id="4_q2h7b"]
+[ext_resource type="Texture2D" uid="uid://j8h2ysbe0ww6" path="res://sprites/IMG_9956.png" id="5_iq77p"]
 
 [sub_resource type="Animation" id="Animation_hoxo3"]
 length = 6.0
@@ -54,6 +56,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../dialogue1/TextureRect2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_758ep"]
 resource_name = "dialogue"
@@ -82,6 +108,7 @@ z_index = 2
 script = ExtResource("1_758ep")
 
 [node name="dialogue1" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -109,8 +136,7 @@ offset_right = 1096.0
 offset_bottom = 620.0
 theme_override_fonts/normal_font = ExtResource("1_kp46k")
 theme_override_font_sizes/normal_font_size = 55
-text = "Yo, Boom-Bot, I need your help!
-You’ve been training me on my moves the past few weeks, but now I gotta go out there and BATTLE!"
+text = "Boom-Bot! I gotta get out there and DANCE!"
 visible_characters = 0
 visible_ratio = 0.006622517
 
@@ -125,12 +151,30 @@ theme_override_font_sizes/font_size = 60
 text = "MC
 "
 
+[node name="TextureRect2" type="TextureRect" parent="dialogue1"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = -414.0
+offset_right = 2155.0
+offset_bottom = 1086.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_q2h7b")
+
 [node name="dialogue2" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="dialogue2"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 87.0
+offset_right = 1985.0
+offset_bottom = 1587.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_iq77p")
 
 [node name="TextureRect" type="TextureRect" parent="dialogue2"]
 layout_mode = 0
@@ -155,7 +199,7 @@ offset_right = 1131.0
 offset_bottom = 620.0
 theme_override_fonts/normal_font = ExtResource("1_kp46k")
 theme_override_font_sizes/normal_font_size = 60
-text = "Woah, MC, what’s the rush? Someone challenge ya to a beef or sumthin’?"
+text = "MC? What’re ya talkin’ about? Go where?"
 visible_characters = 0
 visible_ratio = 0.006622517
 
@@ -169,7 +213,178 @@ theme_override_fonts/font = ExtResource("1_kp46k")
 theme_override_font_sizes/font_size = 60
 text = "BoomBot"
 
+[node name="dialogue3" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="dialogue3"]
+layout_mode = 0
+offset_left = -53.000004
+offset_top = -549.0
+offset_right = 1947.0
+offset_bottom = 951.0
+scale = Vector2(0.6150295, 0.8316943)
+texture = ExtResource("1_hoxo3")
+
+[node name="animplayer1" type="AnimationPlayer" parent="dialogue3"]
+libraries = {
+&"": SubResource("AnimationLibrary_q2h7b")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogue3"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 340.0
+offset_right = 1096.0
+offset_bottom = 620.0
+theme_override_fonts/normal_font = ExtResource("1_kp46k")
+theme_override_font_sizes/normal_font_size = 55
+text = "I gotta put myself out there and become the next big Dance Champ of Beattopia, of course! Where else can I throw these smooth moves?"
+visible_characters = 0
+visible_ratio = 0.006622517
+
+[node name="Label" type="Label" parent="dialogue3"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 233.0
+offset_right = 375.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_kp46k")
+theme_override_font_sizes/font_size = 60
+text = "MC
+"
+
+[node name="TextureRect2" type="TextureRect" parent="dialogue3"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = -414.0
+offset_right = 2155.0
+offset_bottom = 1086.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_q2h7b")
+
+[node name="dialogue4" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="dialogue4"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 87.0
+offset_right = 1985.0
+offset_bottom = 1587.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_iq77p")
+
+[node name="TextureRect" type="TextureRect" parent="dialogue4"]
+layout_mode = 0
+offset_left = -24.000004
+offset_top = -550.0
+offset_right = 1976.0
+offset_bottom = 950.0
+scale = Vector2(0.6150295, 0.8316943)
+texture = ExtResource("1_hoxo3")
+flip_h = true
+
+[node name="animplayer2" type="AnimationPlayer" parent="dialogue4"]
+libraries = {
+&"": SubResource("AnimationLibrary_q2h7b")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogue4"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 340.0
+offset_right = 1131.0
+offset_bottom = 620.0
+theme_override_fonts/normal_font = ExtResource("1_kp46k")
+theme_override_font_sizes/normal_font_size = 60
+text = "Woooah, MC! Where’s this comin’ from all of a sudden? Ya can’t just jump on the dance floor with no trainin’."
+visible_characters = 0
+visible_ratio = 0.006622517
+
+[node name="Label" type="Label" parent="dialogue4"]
+layout_mode = 0
+offset_left = 874.0
+offset_top = 233.0
+offset_right = 1191.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_kp46k")
+theme_override_font_sizes/font_size = 60
+text = "BoomBot"
+
+[node name="dialogue5" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="dialogue5"]
+layout_mode = 0
+offset_left = -53.000004
+offset_top = -549.0
+offset_right = 1947.0
+offset_bottom = 951.0
+scale = Vector2(0.6150295, 0.8316943)
+texture = ExtResource("1_hoxo3")
+
+[node name="animplayer1" type="AnimationPlayer" parent="dialogue5"]
+libraries = {
+&"": SubResource("AnimationLibrary_q2h7b")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogue5"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 340.0
+offset_right = 1096.0
+offset_bottom = 620.0
+theme_override_fonts/normal_font = ExtResource("1_kp46k")
+theme_override_font_sizes/normal_font_size = 55
+text = "But how do I become a Dance Champ, then? I didn’t learn all my moves for nothing…"
+visible_characters = 0
+visible_ratio = 0.006622517
+
+[node name="Label" type="Label" parent="dialogue5"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 233.0
+offset_right = 375.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_kp46k")
+theme_override_font_sizes/font_size = 60
+text = "MC
+"
+
+[node name="TextureRect2" type="TextureRect" parent="dialogue5"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = -414.0
+offset_right = 2155.0
+offset_bottom = 1086.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_q2h7b")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 61.0
+offset_top = 340.0
+offset_right = 1131.0
+offset_bottom = 620.0
+theme_override_fonts/normal_font = ExtResource("1_kp46k")
+theme_override_font_sizes/normal_font_size = 60
+text = "Woooah, MC! Where’s this comin’ from all of a sudden? Ya can’t just jump on the dance floor with no trainin’."
+
 [connection signal="animation_finished" from="dialogue1/animplayer1" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="dialogue1/animplayer1" to="." method="_on_animplayer_1_animation_finished"]
 [connection signal="animation_finished" from="dialogue1/animplayer1" to="dialogue1/animplayer1" method="_on_animation_finished"]
 [connection signal="tree_entered" from="dialogue1/animplayer1" to="." method="_on_animplayer_1_tree_entered"]
+[connection signal="animation_finished" from="dialogue3/animplayer1" to="dialogue3/animplayer1" method="_on_animation_finished"]
+[connection signal="animation_finished" from="dialogue5/animplayer1" to="dialogue5/animplayer1" method="_on_animation_finished"]

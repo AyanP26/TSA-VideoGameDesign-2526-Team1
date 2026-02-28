@@ -1,23 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://fb8d5kqfbdn0"]
+[gd_scene load_steps=4 format=3 uid="uid://fb8d5kqfbdn0"]
 
 [ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="1_7byvd"]
 [ext_resource type="Script" uid="uid://dv8boj84bxjah" path="res://score_screen.gd" id="1_juxjb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juxjb"]
+bg_color = Color(0.6, 0.6, 0.6, 0.58431375)
+
 [node name="score_screen" type="Node2D"]
+z_index = 3
 script = ExtResource("1_juxjb")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6745098)
 theme_override_fonts/font = ExtResource("1_7byvd")
 theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_juxjb")
 text = " SCORE...................
+
+
+
  RANK.....................
 "
 vertical_alignment = 1
 
-[node name="score_rank_label" type="Label" parent="."]
-offset_left = 605.0
-offset_right = 1152.0
-offset_bottom = 648.0
-theme_override_font_sizes/font_size = 200
+[node name="score_label" type="Label" parent="."]
+offset_left = 710.0
+offset_top = 42.0
+offset_right = 1053.0
+offset_bottom = 247.0
+theme_override_fonts/font = ExtResource("1_7byvd")
+theme_override_font_sizes/font_size = 150
+
+[node name="rank_label" type="Label" parent="."]
+offset_left = 710.0
+offset_top = 370.0
+offset_right = 1053.0
+offset_bottom = 575.0
+theme_override_fonts/font = ExtResource("1_7byvd")
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1
+
+[node name="opponent_message" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 567.0
+offset_right = 736.0
+offset_bottom = 636.0
+theme_override_fonts/font = ExtResource("1_7byvd")
+theme_override_font_sizes/font_size = 30

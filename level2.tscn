@@ -1,61 +1,58 @@
-[gd_scene load_steps=13 format=3 uid="uid://mf3h0d4m04vs"]
+[gd_scene load_steps=21 format=3 uid="uid://mf3h0d4m04vs"]
 
 [ext_resource type="Script" uid="uid://bukm3k7sdo4be" path="res://level_2.gd" id="1_y0xe8"]
 [ext_resource type="AudioStream" uid="uid://dec2xfqwrys8j" path="res://poppunk.ogg" id="2_r40rm"]
 [ext_resource type="Texture2D" uid="uid://cwa02m3n2q7e6" path="res://sprites/NeonSunset.png" id="3_6q4t8"]
 [ext_resource type="Texture2D" uid="uid://bhtvd3018naoc" path="res://sprites/basic_circle.png" id="4_r8rrl"]
 [ext_resource type="Texture2D" uid="uid://blmulq7gqujl8" path="res://sprites/cover_circle.png" id="5_lwvnx"]
+[ext_resource type="AudioStream" uid="uid://3rq7jg3vwy2w" path="res://bgm.ogg" id="7_8i3m3"]
 [ext_resource type="Texture2D" uid="uid://c17ehwfjomcvn" path="res://sprites/block_circle.png" id="8_hp87d"]
+[ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="8_r8rrl"]
+[ext_resource type="Texture2D" uid="uid://4mnsu03uhuvd" path="res://sprites/IMG_9759.png" id="9_lwvnx"]
+[ext_resource type="Texture2D" uid="uid://odbxe5whjmql" path="res://sprites/IMG_9762.png" id="10_4ou0f"]
+[ext_resource type="Texture2D" uid="uid://riwhqb5hatln" path="res://sprites/IMG_9765.png" id="11_4k5bj"]
+[ext_resource type="Texture2D" uid="uid://8bcljsrl2l1r" path="res://sprites/IMG_9760.png" id="12_hp87d"]
+[ext_resource type="Texture2D" uid="uid://b5bjqsxss2ynb" path="res://sprites/IMG_9763.png" id="13_gxpff"]
+[ext_resource type="Texture2D" uid="uid://cjm1ys7sux47w" path="res://sprites/IMG_9764.png" id="14_2x2vu"]
+[ext_resource type="Texture2D" uid="uid://c6f4k064fhtd8" path="res://sprites/IMG_9761.png" id="15_f8ci1"]
 
 [sub_resource type="Animation" id="Animation_xy4tn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("green/black:scale")
+tracks/0/path = NodePath("green/black:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.01, 0.01)]
+"values": [Vector2(78.358154, -356.66666)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("green/black:position")
+tracks/1/path = NodePath("purple/black:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0.1, 0.1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("red/black:scale")
+tracks/2/path = NodePath("purple/black:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.01, 0.01)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("red/black:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(477.612, 360)]
 }
 
 [sub_resource type="Animation" id="Animation_i2041"]
@@ -86,55 +83,131 @@ tracks/1/keys = {
 "values": [Vector2(2, 2), Vector2(0.01, 0.01)]
 }
 
-[sub_resource type="Animation" id="Animation_rjtee"]
-resource_name = "redcirc"
+[sub_resource type="Animation" id="Animation_3l65w"]
+resource_name = "purplecirc"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("red/black:scale")
+tracks/0/path = NodePath("purple/black:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2, 2), Vector2(0.01, 0.01)]
+"values": [Vector2(-485.07465, -356.66666), Vector2(477.612, 360)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("red/black:position")
+tracks/1/path = NodePath("purple/black:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": []
+"values": [Vector2(2, 2), Vector2(0.01, 0.01)]
 }
-
-[sub_resource type="Animation" id="Animation_1idop"]
-resource_name = "bluecirc"
-
-[sub_resource type="Animation" id="Animation_beq0j"]
-resource_name = "purplecirc"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xy4tn"]
 _data = {
 &"RESET": SubResource("Animation_xy4tn"),
-&"bluecirc": SubResource("Animation_1idop"),
 &"greencirc": SubResource("Animation_i2041"),
-&"purplecirc": SubResource("Animation_beq0j"),
-&"redcirc": SubResource("Animation_rjtee")
+&"purplecirc": SubResource("Animation_3l65w")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iakae"]
+animations = [{
+"frames": [{
+"duration": 0.21,
+"texture": ExtResource("9_lwvnx")
+}, {
+"duration": 0.01,
+"texture": null
+}],
+"loop": false,
+"name": &"cool",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.21,
+"texture": ExtResource("10_4ou0f")
+}, {
+"duration": 0.01,
+"texture": null
+}],
+"loop": false,
+"name": &"dissed",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.21,
+"texture": ExtResource("11_4k5bj")
+}, {
+"duration": 0.01,
+"texture": null
+}],
+"loop": false,
+"name": &"eh",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.21,
+"texture": ExtResource("12_hp87d")
+}, {
+"duration": 0.01,
+"texture": null
+}],
+"loop": false,
+"name": &"fire",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.21,
+"texture": ExtResource("13_gxpff")
+}, {
+"duration": 0.01,
+"texture": null
+}],
+"loop": false,
+"name": &"fly",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.21,
+"texture": ExtResource("14_2x2vu")
+}, {
+"duration": 0.01,
+"texture": null
+}],
+"loop": false,
+"name": &"nice",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.21,
+"texture": ExtResource("15_f8ci1")
+}, {
+"duration": 0.01,
+"texture": null
+}],
+"loop": false,
+"name": &"rad",
+"speed": 1.0
+}]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_y0xe8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_r40rm")
+
+[node name="dialoguemusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8i3m3")
 autoplay = true
+parameters/looping = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -144,6 +217,13 @@ scale = Vector2(0.5759974, 0.43200618)
 texture = ExtResource("3_6q4t8")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+autostart = true
+
+[node name="end_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [node name="input_circles" type="Control" parent="."]
 layout_mode = 3
@@ -169,24 +249,48 @@ metadata/_edit_use_anchors_ = true
 
 [node name="black" type="TextureRect" parent="input_circles/green"]
 layout_mode = 0
-offset_right = 960.0143
-offset_bottom = 720.0
+offset_left = 78.358154
+offset_top = -356.66666
+offset_right = 1038.361
+offset_bottom = 363.33334
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("5_lwvnx")
 
 [node name="purple" type="TextureRect" parent="input_circles"]
 layout_mode = 0
-offset_left = 397.99997
-offset_right = 1358.0
+offset_left = 411.0
+offset_right = 1371.0
 offset_bottom = 720.0
 scale = Vector2(0.268, 0.3)
 texture = ExtResource("8_hp87d")
 
 [node name="black" type="TextureRect" parent="input_circles/purple"]
 layout_mode = 0
-offset_right = 960.00256
-offset_bottom = 720.0
-scale = Vector2(0.01, 0.01)
+offset_left = 477.612
+offset_top = 360.0
+offset_right = 1437.6128
+offset_bottom = 1080.0
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_lwvnx")
 
+[node name="score_label" type="Label" parent="."]
+offset_left = -15.0
+offset_top = 18.0
+offset_right = 10603.843
+offset_bottom = 873.88275
+scale = Vector2(0.1084864, 0.095807515)
+theme_override_fonts/font = ExtResource("8_r8rrl")
+theme_override_font_sizes/font_size = 600
+text = "0"
+horizontal_alignment = 1
+
+[node name="crowd_reacts" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(583, 896)
+sprite_frames = SubResource("SpriteFrames_iakae")
+animation = &"fly"
+
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="end_timer" to="." method="_on_end_timer_timeout"]

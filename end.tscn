@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cruo7st1r4rni"]
+
+[ext_resource type="FontFile" uid="uid://bjevl264npuf1" path="res://sprites/star-crush/Star Crush.otf" id="1_n735c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egc6y"]
+bg_color = Color(0.19076231, 0.19076234, 0.19076222, 1)
+
+[node name="end" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("1_n735c")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_egc6y")
+text = "THE END
+THANKS FOR PLAYING!"
+horizontal_alignment = 1
+vertical_alignment = 1

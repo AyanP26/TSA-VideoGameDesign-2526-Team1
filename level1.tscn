@@ -206,10 +206,8 @@ stream = ExtResource("3_ootpb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = -15.000002
-offset_top = 5.000001
-offset_right = 1985.0
-offset_bottom = 1505.0
+offset_right = 2000.0
+offset_bottom = 1500.0
 scale = Vector2(0.57600033, 0.4320099)
 texture = ExtResource("3_v38iq")
 
@@ -249,7 +247,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_left = 78.358154
 offset_top = -356.66666
-offset_right = 1038.3588
+offset_right = 1038.361
 offset_bottom = 363.33334
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("4_xy4tn")
@@ -266,14 +264,14 @@ texture = ExtResource("7_usj0q")
 layout_mode = 0
 offset_left = 477.612
 offset_top = 360.0
-offset_right = 1437.6125
+offset_right = 1437.6128
 offset_bottom = 1080.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_xy4tn")
 
 [node name="crowd_reacts" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(176, 708)
+position = Vector2(583, 896)
 sprite_frames = SubResource("SpriteFrames_uuy0h")
 animation = &"fly"
 
@@ -288,4 +286,10 @@ theme_override_font_sizes/font_size = 600
 text = "0"
 horizontal_alignment = 1
 
+[node name="end_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="end_timer" to="." method="_on_end_timer_timeout"]
